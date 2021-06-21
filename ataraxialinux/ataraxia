@@ -1,0 +1,88 @@
+NOTICE: We've moved to Gitlab, and Github will no longer be used. Go here for more up to date info:
+https://gitlab.com/ataraxialinux/ataraxia
+
+Welcome to Ataraxia GNU/Linux
+Ataraxia GNU/Linux is an independent Linux-based OS focusing on simplicity, security and privacy.
+
+Downloads
+
+Intro
+Ataraxia GNU/Linux is a Linux-based operating system, it was made from scratch and it follows three main principles: security, privacy and simplicity. Ataraxia GNU/Linux tries to be an innovative OS and therefore uses latest technologies from the GNU/Linux world. Ataraxia GNU/Linux is different from other distributions, for example it uses musl libc as the standard C library, LLVM/Clang toolchain as the default compiler, a significantly more secure SSL/TLS library called LibreSSL and simple userland tools such as Toybox, lobase (OpenBSD userland for Linux and) and some Plan 9 tools. Ataraxia GNU/Linux is oriented towards professional Linux users.
+
+Simplicity
+Despite using systemd, Ataraxia GNU/Linux is adhering a KISS (Keep It Simple Stupid) principle. It replaces mainstream components with simpler alternatives which do not sacrifice user experience. musl libc, toybox and lobase are just a few of them! Our code is simple and understandable that means it's easier to audit and/or fork.
+
+Security
+Like other popular distributions, Ataraxia GNU/Linux was compiled with PIC, PIE, SSP. However, Ataraxia GNU/Linux configures software to be more secure and it tries to decrease attack surface. Kernel is configured for better security, without compromise. Ataraxia GNU/Linux will provide new mitigations and security features like Control Flow Integrity (CFI), fork of PaX patchset.
+
+Privacy
+Ataraxia GNU/Linux does not collect any form of data and it does not allow proprietary software in its repositories. Proprietary software is known as a main tool to violate user's privacy. Furthermore, Ataraxia GNU/Linux developers are patching software to avoid any data collection.
+
+If you want to get help or advice, please, check out our IRC, Telegram, Matrix, Reddit and Discord.
+
+Also, you can help us with finances. Check out our Patreon page and Ethereum wallet: 0xE72931051e4aDB1c79bbAcad1E1427B2D4eD0D01
+
+GitLab repository GitHub repository
+
+Documentation
+About the build system
+Bootstrapping
+Supported platforms
+Roadmap
+See the ./docs/ folder.
+
+Stargazers over time
+Stargazers over time
+
+About
+Simple and lightweight source-based multi-platform Linux distribution with musl libc.
+
+ataraxialinux.org
+Topics
+linux fast distribution arm privacy cross-platform simple mips linux-distribution x86 cross-compiler safe musl musl-libc powerpc compact risc-v
+Resources
+ Readme
+License
+ GPL-3.0 License
+Releases 36
+Snapshot on 3 May, 2021
+Latest
+on May 3
++ 35 releases
+Sponsor this project
+patreon
+patreon.com/ataraxialinux
+Contributors 21
+@protonesso
+@MrSenshi
+@dotnixd
+@swegbun
+@firasuke
+@emilengler
+@basedace
+@owl4ce
+@roc007
+@paledega
++ 10 contributors
+Languages
+Shell
+62.1%
+ 
+C
+27.6%
+ 
+M4
+4.4%
+ 
+C++
+2.4%
+ 
+Python
+2.0%
+ 
+Makefile
+1.3%
+ 
+Perl
+0.2%
+
