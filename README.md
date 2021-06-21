@@ -1,12 +1,147 @@
-vim-phpcolors
-VIM color schemes for PHP. Best used with the improved PHP syntax highlight plugin vim.php and the plugin for better phpdoc support phpDocumentor. These are used in the screenshots.
+Quill ImageResize Module
+A module for Quill rich text editor to allow images to be resized.
 
-Installation
-The manual way is just to put the theme files into your .vim/colors/ directory, either download them or clone with git.
+Also see quill-image-drop-module, a module that enables copy-paste and drag/drop for Quill.
 
-Then add this to your .vimrc
+Demo
+Plunker
 
-colorscheme <name of the scheme>
-Screenshots
-candystripe![11](https://user-images.githubusercontent.com/58392246/122769590-df840800-d2ce-11eb-9722-3194fa194e31.jpg)
+Usage
+Webpack/ES6
+import Quill from 'quill';
+import { ImageResize } from 'quill-image-resize-module';
 
+Quill.register('modules/imageResize', ImageResize);
+
+const quill = new Quill(editor, {
+    // ...
+    modules: {
+        // ...
+        imageResize: {
+            // See optional "config" below
+        }
+    }
+});
+Script Tag
+Copy image-resize.min.js into your web root or include from node_modules
+
+<script src="/node_modules/quill-image-resize-module/image-resize.min.js"></script>
+var quill = new Quill(editor, {
+    // ...
+    modules: {
+        // ...
+        ImageResize: {
+            // See optional "config" below
+        }
+    }
+});
+Config
+For the default experience, pass an empty object, like so:
+
+var quill = new Quill(editor, {
+    // ...
+    modules: {
+        // ...
+        ImageResize: {}
+    }
+});
+Functionality is broken down into modules, which can be mixed and matched as you like. For example, the default is to include all modules:
+
+const quill = new Quill(editor, {
+    // ...
+    modules: {
+        // ...
+        ImageResize: {
+            modules: [ 'Resize', 'DisplaySize', 'Toolbar' ]
+        }
+    }
+});
+Each module is described below.
+
+Resize - Resize the image
+Adds handles to the image's corners which can be dragged with the mouse to resize the image.
+
+The look and feel can be controlled with options:
+
+var quill = new Quill(editor, {
+    // ...
+    modules: {
+        // ...
+        ImageResize: {
+            // ...
+            handleStyles: {
+                backgroundColor: 'black',
+                border: 'none',
+                color: white
+                // other camelCase styles for size display
+            }
+        }
+    }
+});
+DisplaySize - Display pixel size
+Shows the size of the image in pixels near the bottom right of the image.
+
+The look and feel can be controlled with options:
+
+var quill = new Quill(editor, {
+    // ...
+    modules: {
+        // ...
+        ImageResize: {
+            // ...
+            displayStyles: {
+                backgroundColor: 'black',
+                border: 'none',
+                color: white
+                // other camelCase styles for size display
+            }
+        }
+    }
+});
+Toolbar - Image alignment tools
+Displays a toolbar below the image, where the user can select an alignment for the image.
+
+The look and feel can be controlled with options:
+
+var quill = new Quill(editor, {
+    // ...
+    modules: {
+        // ...
+        ImageResize: {
+            // ...
+            toolbarStyles: {
+                backgroundColor: 'black',
+                border: 'none',
+                color: white
+                // other camelCase styles for size display
+            },
+            toolbarButtonStyles: {
+                // ...
+            },
+            toolbarButtonSvgStyles: {
+                // ...
+            },
+        }
+    }
+});
+BaseModule - Include your own custom module
+You can write your own module by extending the BaseModule class, and then including it in the module setup.
+
+For example,
+
+import { Resize, BaseModule } from 'quill-image-resize-module';
+
+class MyModule extends BaseModule {
+    // See src/modules/BaseModule.js for documentation on the various lifecycle callbacks
+}
+
+var quill = new Quill(editor, {
+    // ...
+    modules: {
+        // ...
+        ImageResize: {
+            modules: [ MyModule, Resize ],
+            // ...
+        }
+    }
+});
